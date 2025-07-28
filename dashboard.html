@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | EduConnect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Edu<span>Connect</span></h2>
+            </div>
+            <div class="user-profile">
+                <div class="avatar">
+                    <img src="assets/default-avatar.png" alt="User Avatar" id="userAvatar">
+                </div>
+                <h3 id="userName">Loading...</h3>
+                <p id="userEmail">...</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-book-open"></i> My Courses</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> Progress</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <h1>Welcome Back, <span id="welcomeName">...</span></h1>
+                    <p>Here's what's happening with your education today</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Stats Cards -->
+                <div class="stats-card">
+                    <div class="stats-icon bg-primary">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="stats-info">
+                        <h3>Enrolled Courses</h3>
+                        <p id="enrolledCourses">0</p>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stats-icon bg-success">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stats-info">
+                        <h3>Completed</h3>
+                        <p id="completedCourses">0</p>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stats-icon bg-warning">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stats-info">
+                        <h3>In Progress</h3>
+                        <p id="inProgressCourses">0</p>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stats-icon bg-danger">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="stats-info">
+                        <h3>Certificates</h3>
+                        <p id="certificatesEarned">0</p>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="card recent-activity">
+                    <div class="card-header">
+                        <h3>Recent Activity</h3>
+                        <a href="#">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <ul class="activity-list" id="activityList">
+                            <!-- Filled by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Student List (Admin View) -->
+                <div class="card student-list">
+                    <div class="card-header">
+                        <h3>Registered Students</h3>
+                        <a href="#">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="studentsTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Username</th>
+                                        <th>Joined</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Filled by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Deadlines -->
+                <div class="card deadlines">
+                    <div class="card-header">
+                        <h3>Upcoming Deadlines</h3>
+                        <a href="#">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <ul class="deadline-list" id="deadlineList">
+                            <!-- Filled by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

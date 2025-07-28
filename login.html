@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | EduConnect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+        /* Add the login specific styles from the previous implementation here */
+        /* They should be merged with the main style.css file */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>Edu<span>Connect</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#courses">Courses</a></li>
+                    <li><a href="login.html" class="btn btn-outline">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="auth-container">
+        <div class="container" id="container">
+            <!-- Include the login/register form from the previous implementation -->
+            <!-- Make sure to update form actions to point to dashboard.html -->
+        </div>
+          <form class="form-group">
+        <h2 class="center">Input Types</h2>
+        <div class="form-group">
+            <label for="text">Text:</label>
+            <input type="text" id="text" placeholder="Enter text">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" value="male" checked>Male
+            <input type="radio" name="gender" value="female" checked>Female
+        </div>
+        <div class="form-group">
+            <label for="Hobbies">Hobbies:</label>
+            <input type="checkbox" name="hobby" value="music">music
+            <input type="text" name="hobby" value="sports">sports
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob">
+        </div>
+        <div class="form-group">
+            <label for="file">Upload File:</label>
+            <input type="file" id="file">
+        </div>
+        <div class="form-group">
+            <label for="country">Select Country:</label>
+            <select id="country">
+                <option>India</option>
+                 <option>USA</option>
+                  <option>UK</option>
+                  <option>Japan</option>
+                  <option>Russia</option>
+                  <option>Thailand</option>
+            </select>
+        </div>
+        <div class="form-actions">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+            <button type="button" onclick="alert('Button clicked!')">Click Me</button>
+        </div>
+    </form>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 EduConnect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- Include the login specific JavaScript -->
+    <script>
+        // After successful login/registration
+        function handleSuccessfulAuth(userData, isRegistration = false) {
+            // Store user data in localStorage
+            localStorage.setItem('currentUser', JSON.stringify(userData));
+            
+            // Add to users list if registration
+            if (isRegistration) {
+                let users = JSON.parse(localStorage.getItem('users') || []);
+                users.push(userData);
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+            
+            // Redirect to dashboard
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>
